@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hauwa's Restaurant - Menu</title>
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <header>
+    <a href="home.html"><h1> Hauwa's Restaurant </h1></a> 
+  </header>
+  
+  <main>
+    <section>
+      <div class="restaurant-info">
+      </div>
+      <div class="menu-grid">
+        <h2>OUR MENU</h2> 
+        <!-- Lines 1-18: Define the basic HTML structure of the webpage, 
+         including the header, main content area, and form section.-->
+        <div class="menu-item">
+          <h3>Noodles</h3>
+          <p>A selection of delicious pasta dishes.</p>
+          <ul>
+            <li>Rigatoni - $12.99</li>
+            <li>Penne - $10.99</li>
+            <li>Fettuccine - $11.99</li>
+            <li>Elbow Macaroni - $8.99</li>
+            
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h3>Rice</h3>
+          <p>Hearty and flavorful rice dishes.</p>
+          <ul>
+            <li>Rice and Stew - $14.99</li>
+            <li>Jollof Rice - $13.99</li>
+            <li>Fried Rice - $9.99</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="order-form">
+      <h2>Place Your Order Online</h2>
+      <form id="order-form-submit">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+        <label for="menu">Select Menu Item:</label>
+        <select id="menu" name="menu" required>
+          <option value="">Select</option>
+        </select><br><br>
+        <label for="order">Your Order:</label>
+        <textarea id="order" name="order" rows="4" read only></textarea><br>
+        <label for="total">Total Amount:</label>
+        <input type="text" id="total" name="total" readonly><br>
+        <button type="submit" id="place-order-btn">Place Order</button>
+        <button type="button" id="display-order-btn">Display Order</button>
+        
+    </form>
+    </section>
+  </main>
+
+  <script>
+      
+      
+
+    // Menu items array
+    let menuItems = [
+      { name: 'Rigatoni', price: 12.99 },
+      { name: 'Penne', price: 10.99 },
+      { name: 'Fettuccine', price: 11.99 },
+      { name: 'Elbow Macaroni', price: 8.99 },
+      { name: 'Rice and Stew', price: 14.99 },
+      { name: 'Jollof Rice', price: 13.99 },
+      { name: 'Fried Rice', price: 9.99 }
+    ];
+//Line 2: This line declares a variable named menuItems using the let keyword.
+//Line 3: The variable menuItems is assigned an array value. This array contains objects, where each object represents a menu item.
+//Line 4: Each object within the array has two properties: name (a string representing the menu item name) and price 
+//(a number representing the price). 
+
+    // Function to populate the menu dropdown
+    function populateMenu() {
+      let selectMenu = document.getElementById('menu'); //retrieves elemnt with the ID menu
+
+
+
+      menuItems.forEach(item => {
+// Line 6: This line defines a function named populateMenu using the function keyword. This function will be responsible for
+// creating and adding options to the menu dropdown on the webpage.
+//Line 7: Inside the function, a variable named selectMenu is declared using let and assigned the value returned by 
+//document.getElementById('menu'). This retrieves the HTML element with the ID "menu" (likely the menu dropdown element).
+//Line 8: The forEach method is called on the menuItems array. This method iterates through each object (menu item) in the array.
+//Line 9: Inside the forEach loop, the argument item represents the current menu item object being processed in the loop.
+
+        let option = document.createElement('option');
+        option.textContent = `${item.name} - $${item.price}`;
+        option.value = item.price;
+        selectMenu.appendChild(option);
+      });
+    }
+    //Creates a new option: It makes a new "choice" for the dropdown menu.
+//Labels the option: It writes the menu item's name and price together (like "Rigatoni - $12.99") on that new choice
+//Gives the option a value: It secretly assigns the price (e.g., 12.99) to the choice behind the scenes. 
+//This value might be used later to calculate the total bill.
+//Adds the option to the menu: it sticks this new choice with the name, price (hidden value), 
+//and label onto the actual dropdown menu on the webpage.
+
+    // Calculate total amount and display order summary
+    document.getElementById('order-form-submit').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      //Line 14: This line uses document.getElementById to get a reference to the element with the ID "order-form-submit" 
+//Line 15: The addEventListener method is called on the retrieved form element. This method attaches an event listener to the form, 
+//specifically listening for the "submit" event (when the form is submitted).
+//Line 16: An anonymous function is passed as the second argument to addEventListener. This function will be executed when 
+//the form is submitted.
+//Line 17: Inside the anonymous function, event.preventDefault() is called to prevent the default form submission 
+//(which would normally reload the page).
+//Line 18: The remaining code within the function (explained in the next lines) will handle retrieving the selected menu item, 
+//calculating the total amount, and displaying the order summary.
+      
+      // Retrieve selected menu item and its price
+      let selectedOption = document.getElementById('menu').value;
+      let selectedMenuItem = menuItems.find(item => item.price === parseFloat(selectedOption));
+      // Retrieve form values
+      let name = document.getElementById('name').value;
+      let phone = document.getElementById('phone').value;
+      //The code grabs the value (price) chosen from the menu dropdown and stores it as selectedOption.
+//It then searches through the menuItems list to find the menu item that matches that price. If found, it stores that menu item's
+// details (including the name) in selectedMenuItem.
+//Separately, it grabs the name and phone number the user entered in the form and stores them in name and phone variables.
+      // Calculate total amount
+      let totalAmount = parseFloat(selectedOption);
+      //calculates the total
+      // Display order summary
+      let orderSummary = `Order Summary:\n`;
+      orderSummary += `Name: ${name}\n`;
+      orderSummary += `Phone Number: ${phone}\n`;
+      orderSummary += `Ordered Item: ${selectedMenuItem.name}\n`;
+      orderSummary += `Total Amount: $${totalAmount.toFixed(2)}\n`;
+//builds order summary
+      // Display delivery information
+      let deliveryInfo = '';
+      if (totalAmount > 10) {
+        deliveryInfo = 'Delivery is free!';
+      } else {
+        deliveryInfo = 'Delivery fee applies.';
+      }
+//The code checks if the totalAmount is more than 10.
+//If it is, it adds "Delivery is free!" to the orderSummary message.
+//If not, it adds "Delivery fee applies."
+      orderSummary += `Delivery: ${deliveryInfo}`;
+
+      // Display order summary and total amount
+      document.getElementById('order').value = orderSummary;
+      document.getElementById('total').value = `$${totalAmount.toFixed(2)}`;
+    });
+
+    // Display order placed message
+    document.getElementById('display-order-btn').addEventListener('click', function() {
+      alert('Order has been placed successfully!');
+      //This line is inside the function that gets executed when the button is clicked. 
+      //It uses the alert function to display a pop-up message on the webpage that says "Order has been placed successfully!".
+      window.location.href = 'home.html'; // Replace with your home page URL
+    });
+
+    // Populate the menu dropdown when the page loads
+    //poplate meni items means adding or filling in the items that appear on the menu. involves creating
+    // a list of choices that users can select when navigating through the menu interface
+    populateMenu();
+  </script>
+
+</body>
+</html>

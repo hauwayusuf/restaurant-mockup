@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Hauwa's Restaurant</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+  <header>
+    <h1>Hauwa's Restaurant</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#reservations">Reservations</a>
+      <a href="#about-us">About Us</a>
+      <a href="#contact-us">Contact Us</a>
+      <a href="menu.html">Menu</a>
+    </nav>
+  </header>
+  
+  <main>
+
+    <section id="home">
+      <h2>Welcome to Hauwa's Restaurant!</h2>
+      <p>Hauwa's restaurant is an eatery that serves the best of the best when it comes to food and customer service. Our aim transcends simply offering a meal. We aspire to orchestrate a symphony of flavor, service, and community that resonates with every guest. Our culinary vision is fueled by a deep passion for deliciousness, a commitment to exceptional hospitality, and a desire to create a positive impact on the world around us.</p>
+
+      <p>The list below shows some of the delicious offerings at Hauwa's Restaurant:</p>
+
+      <ul>
+        <li>Noodles</li><br>
+        <li>Pasta
+          <ul>
+            <li>Rigatoni</li>
+            <li>Penne</li>
+            <li>Fettuccine</li>
+            <li>Elbow Macaroni</li><br>
+          </ul>
+        </li>
+        <li>Rice
+           <ul>
+            <li>Rice and stew</li>
+            <li>Jollof Rice</li>
+            <li>Fried Rice</li><br>
+           </ul>
+        </li>
+        <li>Chicken</li><br>
+        <li>Naan Bread and Butter Chicken</li>
+      </ul>
+
+    
+    </section>
+
+    <section id="reservations">
+      <h2>Make a Reservation</h2>
+
+      <script>
+        function confirmReservation() {
+          const answer = confirm("Would you like to make a reservation?");
+          if (answer) {
+            // Show reservation form (make the form visible)
+            document.getElementById("reservation-form").style.display = "block";
+          } else {
+            // User clicked no, potentially redirect to next page (optional)
+            // You can uncomment the following line to redirect to a specific page on 'no'
+            // window.location.href = "next-page.html";
+          }
+        }
+
+        
+      </script>
+
+      <button onclick="confirmReservation()">Make a Reservation</button>
+
+      <form id="reservation-form" style="display: none;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required><br><br>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <label for="party_size">Party Size:</label>
+        <select id="party_size" name="party_size" required>
+          <option value="">Select</option>
+          <option value="1">1 person</option>
+          <option value="2">2 people</option>
+          <option value="3">3 people</option>
+          <option value="4">4 people</option>
+          <option value="5">5 or more people</option>
+        </select><br><br>
+        <label for="steak_type">Steak Type (optional):</label>
+        <select id="steak_type" name="steak_type">
+          <option value="">Select</option>
+          <option value="1">Half Done Steak</option>
+          <option value="2">Fully Done Steak</option>
+        </select><br><br>
+        <label for="special_requests">Special Requests (optional):</label>
+        <textarea id="special_requests" name="special_requests"></textarea><br><br>
+        <input type="submit" value="SUBMIT RESERVATION">
+        <input type="submit" value="ADD ANOTHER RESERVATION"
+      </form>
+    </section>
+
+    <section id="about-us">
+        <h2>About Hauwa's Restaurant</h2>
+        <div class="about-content">
+          <img src="my.src.JPG" alt="Hauwa, Restaurant Owner" class="owner-image">  
+          
+
+          <p>At Hauwa's Kitchen, we bring a taste of Italy straight to your table. 
+            Inspired by my grandmother's (Hauwa) traditional recipes passed down through generations,
+            we serve authentic Italian comfort food made with fresh, seasonal ingredients.<br><br>
+      
+            Our chefs, led by Hauwa's apprentice Khadija Hamis, have honed their skills in kitchens across Italy. 
+            They are passionate about bringing the flavors and techniques of their homeland to our community.<br><br>
+        
+            Hauwa's kitchen is more than just a restaurant; it's a warm and inviting space where families and friends 
+            can gather to enjoy a delicious meal and create lasting memories. We have a vibrant patio for al fresco dining, 
+            and on weekends, you can enjoy live music by local musicians.<br><br>
+
+            We are proud to have been named 'Best Italian Restaurant' by [Local Magazine Name] for two years running.
+            We've also received rave reviews from customers on [Review Website Name] and continue to strive for excellence in all 
+            aspects of our dining experience.<br><br>
+
+            Hauwa's Kitchen is deeply committed to giving back to the community. 
+            We partner with local charities and participate in food donation drives to support those in need.
+            We believe in fostering a sense of community and sharing our love for food with everyone.<br><br>
+        
+            Come visit us and experience the taste of Hauwa's love in every bite!</p>
+        </div>
+      </section>
+    
+      <section id="contact-us">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+          <p>
+            <h5>Address</h5>
+            Area 11, NNPC Quaters, Block SA 19 <br><br>
+            <a href="https://maps.google.com/">Get Directions</a>
+          </p>
+          <p>
+            Phone: (+234) 555-1234
+          </p>
+          <p>
+            Email: hauwauuusman04@gmail.com<a href="mailto:[hauwauuusman04@gmail.com"></a>
+          </p>
+        </div>
+    
+        <h3>Additional Information</h3>
+        <div class="additional-info">
+          <p>Operating Hours: 24 Hours</p>
+          <p>Parking: Valet parking or Owners Risk</p>
+        </div>
+
+        <h3>Follow Us on Social Media</h3>
+        <div class="social-media">
+          <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+        </div>
+      
+      </section>
+      
+
+     </main>
+
+</body>
+</html>

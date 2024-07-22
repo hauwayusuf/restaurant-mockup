@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hauwa's Restaurant - Reservations</title>
+</head>
+<body>
+  <h1>Hauwa's Restaurant</h1>
+
+  <h2>Make a Reservation</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="surname">surname:</label>
+    <input type="text" id="surname" surname="surname" required><br><br>
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required><br><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required><br><br>
+    <label for="party_size">Party Size:</label>
+    <select id="party_size" name="party_size" required>
+      <option value="">Select</option>
+      <option value="1">1 person</option>
+      <option value="2">2 people</option>
+      <option value="3">3 people</option>
+      <option value="4">4 people</option>
+      <option value="5">5 or more people</option>
+    </select><br><br>
+    <label for="steak_type">steak type:</label>
+    <select id="steak_type" name="steak_type" optional>
+      <option value="">Select</option>
+      <option value="1">half done steak</option>
+      <option value="2">fully done steak</option>
+    </select><br><br>
+    <label for="special_requests">Special Requests (optional):</label>
+    <textarea id="special_requests" name="special_requests"></textarea><br><br>
+    <input type="submit" value="Submit Reservation">
+    <input type="submit" value="make another reservation">
+  </form>
+
+</body>
+</html>

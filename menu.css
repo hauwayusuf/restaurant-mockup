@@ -1,0 +1,158 @@
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  display: grid; /* Use grid for header layout */
+  grid-template-columns: 1fr auto; /* One fraction for logo, auto for nav */
+  align-items: center; /* Align items vertically */
+}
+
+h1 {
+  text-align: center; /* Center logo within its grid cell */
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex; /* Use flexbox for navigation layout within its cell */
+  justify-content: space-between; /* Align links horizontally */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+
+nav a:hover {
+  background-color: #ddd;
+  color: peachpuff;
+}
+main {
+    padding: 20px; /* Add padding to the main content area */
+  }
+  
+  section {
+    margin-bottom: 20px; /* Add space between sections */
+    padding: 20px; /* Add padding to sections */
+    border: 1px solid #ccc; /* Add a thin border to sections */
+  }
+  
+  h2 {
+    text-align: center; /* Center align section headings */
+    font-size: 1.5em; /* Set a smaller font size for section headings */
+    margin-bottom: 15px; /* Add some space after section headings */
+  }
+  
+  
+
+  form {
+    /* Style the entire form */
+    border: 1px solid #ccc; /* Add a thin border */
+    padding: 5px; /* Add some padding for better readability */
+    margin: 0 auto; /* Center the form horizontally */
+    width: 100%; /* Set a width for the form */
+  }
+  
+  label {
+    /* Style the labels */
+    display: block; /* Display labels on their own line */
+    margin-bottom: 4px; /* Add some space after the label */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="time"] {
+    /* Style all text input fields */
+    width: 93%; /* Set the width to fill the available space */
+    padding: 10px; /* Add some padding for better usability */
+    border: 1px solid #ccc; /* Add a thin border */
+    margin-bottom: 10px; /* Add some space between input fields */
+  }
+  
+  select {
+    /* Style the dropdown menu (select element) */
+    width: 94.5%; /* Set the width to fill the available space */
+    padding: 10px; /* Add some padding for better usability */
+    border: 1px solid #ccc; /* Add a thin border */
+    margin-bottom: 15px; /* Add some space between the dropdown and other elements */
+  }
+  
+  textarea {
+    /* Style the text area */
+    width: 93%; /* Set the width to fill the available space */
+    height: 80px; /* Set a height for the text area */
+    padding: 10px; /* Add some padding for better usability */
+    border: 1px solid #ccc; /* Add a thin border */
+    margin-bottom: 15px; /* Add some space below the text area */
+  }
+  
+  input[type="submit"] {
+    /* Style the submit button */
+    background-color: black; /* Green background color */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Add some padding for better look */
+  }
+  .about-content {
+    display: flex; /* Make the content a flexbox for side-by-side layout */
+    grid-template-columns: 1fr 2fr; /* Divide the grid into two columns */
+    grid-gap: 20px; /* Add spacing between grid items */
+  }
+  
+  .owner-image {
+
+    width: 250px; /* Set the image width */
+    margin-right: 20px; /* Add margin for spacing between image and text */
+    border: 1px solid #ccc; /* Add a thin border to the image */
+    height: 30%;
+}
+.founder-title {
+  margin-top: 0; /* Remove default margin from the top */
+  font-weight: bold; /* Make the text bold */
+  font-size: 1.2em; /* Increase font size slightly */
+  align-self: flex-start; /* Align the title at the top of the image within the flexbox */
+}
+section#contact-us {
+    padding: 20px; /* Add padding to the section */
+    border: 1px solid #ccc; /* Add a thin border */
+    margin-bottom: 20px; /* Add space below the section */
+  }
+  
+  section#contact-us h2 {
+    text-align: center; /* Center align the heading */
+    margin-bottom: 15px; /* Add space below the heading */
+  }
+  
+  .contact-info,
+  .social-media,
+  .additional-info {
+    margin-bottom: 10px; /* Add space between contact information sections */
+  }
+  
+  .contact-info p,
+  .additional-info p {
+    margin-bottom: 5px; /* Add space between paragraphs */
+  }
+  
+  .social-media a {
+    margin-right: 10px; /* Add space between social media icons */
+  }
+  
+  .social-media a i {
+    font-size: 2em; /* Set the font size for social media icons */
+    color: #333; /* Set the color for social media icons */
+  }
+  
+  .social-media a:hover i {
+    color: #000; /* Change color on hover for social media icons */
+  }
