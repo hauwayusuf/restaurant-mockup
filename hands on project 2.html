@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #FDC5F5;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #F7AEF8;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            padding: 20px;
+        }
+
+        .display {
+            background-color: #B388EB;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: right;
+            font-size: 2em;
+            color: white;
+            margin-bottom: 20px;
+            min-height: 50px;
+            word-wrap: break-word;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: #B388EB;
+            color: white;
+            border: none;
+            padding: 20px;
+            font-size: 1.5em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #A064DE;
+        }
+
+        .btn:active {
+            background-color: #9157C7;
+        }
+
+        .wide {
+            grid-column: span 2; /* Makes the button span two columns */
+        }
+
+        .tall {
+            grid-row: 4 / span 2; /* Position the = button to start at the top of the 4th row and span two rows */
+            grid-column: 4;/* Align the button to the start of its grid area */
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display"></div>
+        <div class="buttons">
+            <button class="btn wide" onclick="clearDisplay()">AC</button> <!-- AC button spanning two columns -->
+            <button class="btn" onclick="appendToDisplay('/')">/</button>
+            <button class="btn" onclick="appendToDisplay('*')">*</button>
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn" onclick="appendToDisplay('-')">-</button>
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn" onclick="appendToDisplay('+')">+</button>
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn wide" onclick="appendToDisplay('0')">0</button> <!-- 0 button spanning two columns -->
+            <button class="btn" onclick="appendToDisplay('.')">.</button>
+            <button class="btn tall" onclick="calculate()">=</button> <!-- = button spanning two rows -->
+        </div>
+    </div>
+
+    <script>
+        function appendToDisplay(value) {
+            document.getElementById('display').innerText += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').innerText = '';
+        }
+
+        function calculate() {
+            try {
+                const result = eval(document.getElementById('display').innerText);
+                document.getElementById('display').innerText = result;
+            } catch (error) {
+                document.getElementById('display').innerText = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
